@@ -1,0 +1,75 @@
+###############################################
+# ESP32-S3-WROOM-1 N4R2 BASIC FLASH / PSRAM
+###############################################
+
+# Flash configuration (4 MB)
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+CONFIG_ESPTOOLPY_FLASHFREQ_80M=y
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+
+
+
+###############################################
+# CONSOLE ROUTING — MUST BE UART FOR USB HOST
+###############################################
+
+CONFIG_BOOT_ROM_LOG_ALWAYS_ON=n
+CONFIG_BOOT_ROM_LOG_ALWAYS_OFF=y
+
+# Disable ALL USB Serial/JTAG consoles (primary + secondary)
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG_ENABLED=n
+CONFIG_ESP_CONSOLE_SECONDARY_USB_SERIAL_JTAG=n
+
+# Enable and route console to UART0
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+CONFIG_ESP_CONSOLE_UART=y
+CONFIG_ESP_CONSOLE_UART_NUM=0
+CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200
+
+# Ensure "no console" mode is not selected
+CONFIG_ESP_CONSOLE_NONE=n
+
+###############################################
+# USB HOST STACK
+###############################################
+
+# USB OTG is supported on ESP32-S3
+CONFIG_USB_OTG_SUPPORTED=y
+
+
+###############################################
+# BOOTLOADER / SYSTEM LOGGING
+###############################################
+
+# Ensure bootloader uses UART, not USB
+CONFIG_BOOTLOADER_LOG_LEVEL_INFO=y
+CONFIG_BOOTLOADER_VDDSDIO_BOOST_1_9V=y
+
+# Prevent panic logs from forcing USB console
+CONFIG_ESP_SYSTEM_PANIC_PRINT_REBOOT=y
+
+
+###############################################
+# DEFAULT LOG LEVELS
+###############################################
+
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_BOOTLOADER_LEVEL_INFO=y
+
+#reduce build:
+CONFIG_ESP_WIFI_ENABLED=n
+CONFIG_ESP_COEX_SW_COEXIST_ENABLE=n
+CONFIG_BT_ENABLED=n
+CONFIG_BT_BLE_ENABLED=n
+CONFIG_BT_CLASSIC_ENABLED=n
+CONFIG_LWIP_IPV4=n
+CONFIG_LWIP_IPV6=n
+CONFIG_LWIP_ICMP=n
+
+CONFIG_ESP_WIFI_ENABLED=n
+CONFIG_ESP_COEX_SW_COEXIST_ENABLE=n
+
+CONFIG_SPI_MASTER_IN_IRAM=n
+CONFIG_SPI_SLAVE_IN_IRAM=n
+CONFIG_EFUSE_VIRTUAL=n
+
