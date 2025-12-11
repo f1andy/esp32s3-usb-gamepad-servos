@@ -34,9 +34,8 @@ Specifically tested with **ESP-IDF v5.5.1** and a wired USB gamepad in HID mode.
 esp32s3-usb-gamepad-servos/
 ├── main/
 │ ├── main.c
-│ ├── gamepad.h/c
-│ ├── servo.h/c
-│ ├── io.h/c
+│ ├── CMakeLists.txt
 ├── sdkconfig.defaults
 ├── CMakeLists.txt
 └── idf_component.yml
+
