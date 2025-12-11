@@ -1,15 +1,33 @@
-# ESP-IDF build products
+# ESP-IDF build directory
 build/
+
+# ESP-IDF auto-generated config
 sdkconfig
 sdkconfig.old
 
+# Managed components (downloaded automatically via idf_component.yml)
+managed_components/
+
 # VS Code settings
 .vscode/
+
+# Python virtualenvs
+.venv/
+env/
+venv/
 
 # Python caches
 __pycache__/
 *.pyc
 
-# Editor backups
+# Editor backups / temp files
 *~
 *.swp
+*.swo
+.DS_Store
+
+# CMake / Ninja intermediate files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
